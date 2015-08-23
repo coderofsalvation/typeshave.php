@@ -82,25 +82,25 @@ Still wondering why functions like this explode once in a while? :D
 
 Did you you try PITA-fying your code with if/else checks?
 
-  function foo($data){
-    if( isset($data)          && 
-        is_object($data)      && 
-        isset($data->foo)     && 
-        is_string($data->foo) &&
-        .. 
-        && 
-        .. 
-        && Argh this is a big PITA 
-    // omg how do I even check properties recursively?
-    foreach( $data->records as $record ){
-      // PITA 
-      // PITA 
-      // PITA 
-      // PITA 
+    function foo($data){
+      if( isset($data)          && 
+          is_object($data)      && 
+          isset($data->foo)     && 
+          is_string($data->foo) &&
+          .. 
+          && 
+          .. 
+          && Argh this is a big PITA 
+      // omg how do I even check properties recursively?
+      foreach( $data->records as $record ){
+        // PITA 
+        // PITA 
+        // PITA 
+        // PITA 
+      }
+      ...
+      // now finally we can do what the function should do :/
     }
-    ...
-    // now finally we can do what the function should do :/
-  }
 
 ## Conclusion
 
