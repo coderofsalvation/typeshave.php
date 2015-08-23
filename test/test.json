@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": ["foo","records"],
+  "properties": {
+    "foo": { "type": "string", "regex": "/foo/", "minLength": 3 },
+    "bar": { "type": "string", "enum": ["bar1","bar2"] },
+    "records": {
+      "items": [
+        { 
+          "type": "object",
+          "required": ["foo"],
+          "properties":{
+            "foo": { "type": "string" }
+          }
+        }
+      ]
+    } 
+  }
+}
