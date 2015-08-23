@@ -22,7 +22,7 @@ and then
 
     foo2( 123 );       // fail please
 
-> typeshave uses the establish [jsonschema](http://jsonschema.net) validation-format. Re-usable 
+> typeshave uses the established [jsonschema](http://jsonschema.net) validation-format. Re-usable 
 in many other areas (database-, restpayload-, form-validation and so on)
 
 or
