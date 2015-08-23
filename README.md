@@ -20,7 +20,7 @@ and then
       TypeShave::check( $foo, '{ "foo": { "type": "string", "minLength":1, "regex": "/foo/"}  }' );
     }
 
-    foo2( 123 );       // fail please "this is stringgggggg" );
+    foo2( 123 );       // fail please
 
 > typeshave uses the establish [jsonschema](http://jsonschema.net) validation-format. Re-usable 
 in many other areas (database-, restpayload-, form-validation and so on)
