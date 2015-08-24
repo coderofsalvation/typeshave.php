@@ -4,7 +4,7 @@ Prevent functions from exploding with garbage-in garbage-out.
 
 <center><img src="http://coderofsalvation.github.io/typeshave/logo.png"/></center> 
 
-Guard your function's incoming data using typeshave wrappers in JS & PHP ([typeshave website](http://coderofsalvation.github.io/typeshave/)).
+Guard your function's incoming data using typeshave wrappers in JS & PHP ([typeshave website](http://coderofsalvation.github.io/typeshave/))
 
 ## Usage
 
@@ -125,4 +125,5 @@ be found in older jsonschema formats:
             "type": "integer"  
           }]
        }
+
 
