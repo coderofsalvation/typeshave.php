@@ -26,8 +26,8 @@
  */
 namespace coderofsalvation;
 
-include_once( __DIR__."/../vendor/geraintluff/jsv4/jsv4.php" );
- 
+include_once( __DIR__."/../../../geraintluff/jsv4/jsv4.php" ); // no support for namespaces / psr-4 autoloading :/
+
 class TypeShave {
 
   public static $schemaFiles = array();
@@ -106,14 +106,14 @@ class TypeShave {
     $result = self::completeSchema($schema,$args);
     $schema = $result->schema;
     $args = $result->args;
-    $result = Jsv4::validate( (object)$args, $schema );
+    $result = \Jsv4::validate( (object)$args, $schema );
     if( $result->errors  ){
       if( !getenv("DEBUG") ){
         foreach( $result->errors as $k => $v ){
           trigger_error($location."\ntypeshave: ".preg_replace("/\//",".", $v->schemaPath) . " : " . $v->message,E_USER_WARNING );
         }
       }else print_r( array("args"=> $args, "errors" => $result->errors ));
-      throw new Exception("TYPESHAVE_FAIL");
+      throw new \Exception("TYPESHAVE_FAIL");
     }
   }
 }
