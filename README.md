@@ -12,7 +12,7 @@ Guard your function's incoming data using typeshave wrappers in JS & PHP ([types
 
 and then 
 
-    use coderofsalvation/TypeShave;
+    use coderofsalvation\TypeShave;
 
     function foo2($foo){
       TypeShave::check( $foo, (object)array(
