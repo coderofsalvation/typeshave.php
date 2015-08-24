@@ -1,7 +1,6 @@
 {
     "name": "coderofsalvation/typeshave",
     "description": "Lightweight typesafe function wrapper for PHP/JS. Validate nested data for forms,api's and more with jsonschema (http://coderofsalvation.github.io/typeshave)",
-    "minimum-stability": "stable",
     "version": "0.1.0",
     "license": "BSD-3-Clause",
     "authors": [
