@@ -14,22 +14,27 @@ and then
 
     use coderofsalvation/TypeShave;
 
-    // function with single arg typeshave check 
-
     function foo2($foo){
-      TypeShave::check( $foo, '{ "foo": { "type": "string", "minLength":1, "regex": "/foo/"}  }' );
+      TypeShave::check( $foo, (object)array(
+        "foo" => (object)array( "type" => "string", "minLength" => 1, "regex" => "/foo/" )
+      ));
     }
 
     foo2( 123 );       // fail please
 
-> typeshave uses the established [jsonschema](http://jsonschema.net) validation-format. Re-usable 
-in many other areas (database-, restpayload-, form-validation and so on)
+or heck, we can even write jsonschema inline:
+    
+    function foo2($foo){
+      TypeShave::check( $foo, '{ "foo": { "type": "string", "minLength":1, "regex": "/foo/"}  }' );
+    }
+
+
+> typeshave uses the established [jsonschema](http://jsonschema.net) validation-format, which even 
+supports validating nested datastructures. Re-usable in many other areas (database-, restpayload-, form-validation and so on)
 
 or
 
-    use coderofsalvation/TypeShave;
-
-    // function with multiple arg typeshave check 
+    // multiple arguments at once 
 
     function foo($foo, $bar){
       TypeShave::check( func_get_args(), '{
@@ -41,17 +46,9 @@ or
 
     foo( true, true ); // fail please 
 
-or just pass native php (bit more verbose though)
-
-    function native($foo){
-      TypeShave::check( $foo, (object)array( 
-        'foo' => (object)array( 'type' => 'string' )
-      ));
-    }
-
     native("some string"); // should pass
 
-or how about passing PHAT containers using [separate jsonschema file](test/test.json) without getting verbose
+or how about passing PHAT nested containers using [separate jsonschema file](test/test.json) without getting verbose
 
     function phat($container){
       TypeShave::check( $container, __DIR__."/test.json" ); 
@@ -67,7 +64,9 @@ or how about passing PHAT containers using [separate jsonschema file](test/test.
 
     phat($container);
 
-## why non-typesafe is great, but not with PHAT objects
+> see [test.json here](https://github.com/coderofsalvation/typeshave.php/blob/master/test/test.json)
+
+## why non-typesafe is great, but not with PHAT nested objects
 
 For example:
 
@@ -109,7 +108,7 @@ No more :
 * functions going out of control
 * assertions-bloat inside functions 
 * complaining about javascript not being typesafe
-* unsafe recursive datastructures 
+* typesafe nested datastructures 
 * verbose unittests doing typesafe stuff 
 
 Typeshave deals with problems immediately when they occur to prevent this:
