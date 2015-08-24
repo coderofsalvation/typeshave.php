@@ -1,6 +1,6 @@
 {
     "name": "coderofsalvation/typeshave",
-    "description": "Lightweight typesafe function wrapper. Wrap functions,forms,api's and more with jsonschema (http://coderofsalvation.github.io/typeshave)",
+    "description": "Lightweight typesafe function wrapper. Validate nested data for forms,api's and more with jsonschema (http://coderofsalvation.github.io/typeshave)",
     "minimum-stability": "dev",
     "version": "0.1.5",
     "license": "BSD-3-Clause",
