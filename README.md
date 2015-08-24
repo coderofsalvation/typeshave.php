@@ -20,7 +20,7 @@ and then
       ));
     }
 
-    foo2( 123 );       // fail please
+    foo2( 123 );       // will throw exception 
 
 or heck, we can even write jsonschema inline:
     
@@ -44,9 +44,7 @@ or
       // do stuff
     }
 
-    foo( true, true ); // fail please 
-
-    native("some string"); // should pass
+    foo( true, true ); // will throw exception
 
 or how about passing PHAT nested containers using [separate jsonschema file](test/test.json) without getting verbose
 
