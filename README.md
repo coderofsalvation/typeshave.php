@@ -8,7 +8,8 @@ Guard your function's incoming data using typeshave wrappers in JS & PHP ([types
 
 ## Usage
 
-    composer require coderofsalvation/typeshave
+    $ echo '{ "minimum-stability": "dev" }' > composer.json
+    $ composer require coderofsalvation/typeshave
 
 and then 
 
