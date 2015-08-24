@@ -115,3 +115,16 @@ No more :
 Typeshave deals with problems immediately when they occur to prevent this:
 
 <center><img src="http://www.gifbin.com/bin/102009/1256553541_exploding-trash.gif"/></center>
+
+## NOTE: arrays 
+
+the v4 jsonschema validator does support arrays by noticing the 'items'-variable, so please omit `type: "array"` which can 
+be found in older jsonschema formats:
+
+       "myarray": {
+    //   "type": array,     *REMOVE ME*
+         "items": [{
+            "type": "integer"  
+          }]
+       }
+
